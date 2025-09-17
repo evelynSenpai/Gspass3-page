@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../View/main.css">
+    <title>GsPass</title>
+</head>
+<body>
+    <main>
+        <div class = "conteiner">
+            <div class = "elemento">
+                <i>GsPass</i>
+            </div>
+        </div>
+    </main> 
+    <h1>Seu Gerenciador de Senhas!</h1>
+    <br>
+    <h2>Faça Login Para Entrar</h2>
+    <img src="../Imagens/GsPassLogo.png">
+        <br>
+    <form name="login" id="login" action = "../Controller/Login.php" method="POST">
+        <label for = "email">Email: </label>
+        <input type="email" name="email" id="email" onfocus="EMAIL" required />
+        <br>
+        <label for = "senha">Senha: </label>
+        <input type="password" name="senha" id="senha" onfocus="SENHA" required />
+        <br>
+        <br>
+        <button type = "submit" name="submit">Login</button>
+    </form> 
+    <br>
+    <br>
+    <br>
+    <br>
+    <a class = "bnt2" href = "../View/Cadastro.html">Cadastre-se</div>
+</body>
+</html>

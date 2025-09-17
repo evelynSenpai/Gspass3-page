@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Senhas</title>
+</head>
+<style>
+    body{
+        background-color: #57449a;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .container{
+        background: #EEE;
+        height: 800vh;
+    }
+    .elemento{
+        background: #1f252f;
+        color: #ffffff;
+    }
+    main{
+        text-align: center;
+        font-size: 10em;
+    }
+    h2{
+        color: #EEE;
+        text-align: center;
+    }
+    h3{
+        color: #EEE;
+        text-align: center;
+        font-size: 2em;
+        transform: translateY(+2800%) translateX(-1%);
+    }
+    form{
+        background-color:  #1f252f;
+        color: #f5f5f5;
+        text-align: center;
+        font-size: 2em;
+        position: absolute;
+        padding: 20px 50px;
+        border: 1px solid rgb(0, 0, 0);
+        top: 60%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%)
+    }
+    .bnt2{
+        box-shadow: 2px 2px 2px #000000;
+        text-decoration: none;
+        font-family: 'Times New Roman';
+        color: #EEE;
+        background-color: #1f252f;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 50px;
+        text-align: center;
+        cursor: pointer;
+        transition: background 1s;
+        font-size: 20px;
+        padding: 4px 9px;
+        width: 150px;
+        position: absolute;
+        top: 95%;
+        left: 30%;
+        transform: translateY(-50%) translateX(-110%);
+        margin: 350px;
+    }
+    .bnt2:hover{
+        background: #000000;
+    }
+    .bnt{
+        box-shadow: 2px 2px 2px #000000;
+        text-decoration: none;
+        font-family: 'Times New Roman';
+        color: #EEE;
+        background-color: #1f252f;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 50px;
+        text-align: center;
+        cursor: pointer;
+        transition: background 1s;
+        font-size: 20px;
+        padding: 4px 9px;
+        width: 180px;
+        position: absolute;
+        top: 95%;
+        left: 30%;
+        transform: translateY(-50%) translateX(-5%);
+        margin: 350px;
+    }
+    .bnt:hover{
+        background: #000000;
+    }
+    .btn3{
+        font-size: 90px;
+        height: 120px;
+        width: 120px;
+        color:rgb(255, 255, 255);
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 100px;
+        cursor: pointer;
+        transition: background 1s;
+        position: absolute;
+        transform: translateY(+1%) translateX(+1300%);
+    }
+    .btn3:hover{
+        background: rgb(0, 0, 0);
+    }
+    table{
+        background-color:  #1f252f;
+        color: #f5f5f5;
+        text-align: center;
+        font-size: 2em;            
+        position: absolute;
+        padding: 20px 30px;
+        border: 1px solid rgb(0, 0, 0);
+        top: 60%;
+        left: 39%;
+        border-radius: 50px;
+        transform: translateY(-50%) translateX(-50%);
+        font-family: 'Times New Roman';
+        margin: 190px;
+    }
+    #apagarSenha{
+        box-shadow: 2px 2px 2px #000000;
+        text-decoration: none;
+        font-family: 'Times New Roman';
+        color: #EEE;
+        background-color:#1f252f;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 50px;
+        text-align: center;
+        cursor: pointer;
+        transition: background 1s;
+        font-size: 20px;
+        padding: 4px 9px;
+        width: 150px;
+        position: absolute;
+        top: 116%;
+        left: 44%;
+        transform: translateY(+400%) translateX(-129%);
+        margin: 190px;
+    }
+    #apagarSenha:hover{
+        background: #000000;
+    }
+    #nSenha{
+        color: #000000;
+        font-size: 0.8em;
+        transform: translateY(+4880%) translateX(+500%);          
+    }
+</style>
+<body>
+    <a class = "btn3" href = "Perfil.html">
+        <img src="../Imagens/ícone.png" style="height: 250px; width: 250px;">
+    </a>
+    <main>
+        <div class = "conteiner">
+                <div class = "elemento">
+                    <i>Minhas Senhas</i>
+        </div>
+        </div>
+    </main>
+    <h2>Aqui estão todas as suas senhas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Senha</th>
+                <th>Aplicação</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaSenhas" name="tabelaSenhas">
+            
+        </tbody>  
+    </table>
+    <a class = "bnt2" href = "../View/index.html">Voltar</a>
+    <a class = "bnt" href = "../View/CriarNovaSenha.php">Criar uma senha nova</a>
+    <h3>Digite o ID da senha</h3>
+    <button id="apagarSenha" name="apagarSenha" type="button" onclick="apagarSenha()">Apagar Senha</button>
+    <input id="nSenha" name="nSenha" type="number" />
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+        let xhttp = new XMLHttpRequest
+        xhttp.onload = function(){
+            document.getElementById('tabelaSenhas').innerHTML=this.response;
+        }
+        xhttp.open('GET','../Controller/TabelaSenhas.php');
+        xhttp.send();
+        })
+        function apagarSenha() {
+            let senha = document.getElementById('nSenha').value
+            if (!senha) {
+                alert("NÃO É POSSÍVEL APAGAR A SENHA, DIGITE O ID!");
+            } else {
+                let xhttp = new XMLHttpRequest
+                xhttp.onload = function () {
+                    window.location = "MinhasSenhas.html";
+                }
+                xhttp.open('GET','../Controller/ApagarSenhas.php?senha='+senha);
+                xhttp.send();
+                }
+            }
+    </script>
+</body>
+</html>

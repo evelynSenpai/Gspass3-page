@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+</head>
+<style>
+    body{
+        background-color: #57449a;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .container{
+        background: #ff0000;
+        height: 800vh;
+    }
+    .elemento{
+        background: #1f252f;
+        color: #ffffff;
+    }
+    main{
+        text-align: center;
+        font-size: 10em;
+    }
+    h2{
+        color: #EEE;
+        text-align: center;
+    }
+    form{
+        color: #1f252f;
+        text-align: center;
+        font-size: 2em;
+    }
+    h1{
+        color: white;
+        text-align: center;
+        font-size: 5em;
+    }
+    .bnt2{
+        box-shadow: 2px 2px 2px #000000;
+        text-decoration: none;
+        font-family: 'Times New Roman';
+        color: #EEE;
+        font-size: 40px;
+        width: 150px;
+        background-color:#1f252f;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 50px;
+        text-align: center;
+        cursor: pointer;
+        transition: background 1s;
+        font-size: 20px;
+        padding: 4px 9px;
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%)
+    }
+    .bnt2:hover{
+        background: #000000;
+    }
+    .bnt3{
+        box-shadow: 2px 2px 2px #000000;
+        text-decoration: none;
+        font-family: 'Times New Roman';
+        color: #EEE;
+        font-size: 40px;
+        width: 150px;
+        background-color:#1f252f;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 50px;
+        text-align: center;
+        cursor: pointer;
+        transition: background 1s;
+        font-size: 20px;
+        padding: 4px 9px;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%)
+    }
+    .bnt3:hover{
+        background: #000000;
+    }
+    .bnt4{
+        box-shadow: 2px 2px 2px #000000;
+        text-decoration: none;
+        font-family: 'Times New Roman';
+        color: #EEE;
+        font-size: 40px;
+        width: 250px;
+        background-color:#1f252f;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 50px;
+        text-align: center;
+        cursor: pointer;
+        transition: background 1s;
+        font-size: 20px;
+        padding: 10px 30px;
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translateY(-50%) translateX(190%);
+    }
+    .bnt4:hover{
+        background: #000000;
+    }
+    img{
+        position: fixed;
+        width: 350px;
+        transform: translateY(0%) translateX(+220%)
+    }
+    table{
+        background-color:  #1f252f;
+        color: #f5f5f5;
+        text-align: left;
+        font-size: 2em;
+        position: absolute;
+        padding: 10px 15px;
+        border: 1px solid rgb(0, 0, 0);
+        top: 60%;
+        left: 50%;
+        border-radius: 50px;
+        transform: translateY(-50%) translateX(-50%);
+        font-family: 'Times New Roman';
+    }
+    #excluirPerfil{
+        box-shadow: 2px 2px 2px #000000;
+        text-decoration: none;
+        font-family: 'Times New Roman';
+        color: #EEE;
+        font-size: 40px;
+        width: 290px;
+        background-color:#1f252f;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 50px;
+        text-align: center;
+        cursor: pointer;
+        transition: background 1s;
+        position: right;
+        font-size: 20px;
+        padding: 10px 30px;
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translateY(-300%) translateX(-50%);
+    }
+    #excluirPerfil:hover{
+        background: #000000;
+    }
+</style>
+<body>
+    <main>
+        <div class = "conteiner">
+            <div class = "elemento">
+                <i>Perfil</i>
+            </div>
+        </div>
+    </main>
+    <img src = "../imagens/ícone.png" alt="avatar">
+    <table>
+        <tbody id="tabelaPerfil" name="tabelaPerfil">
+
+        </tbody>  
+    </table>
+    <a class = "bnt3" href = "EditarPerfil.html">Editar Perfil</a>
+    <button id="excluirPerfil" name="excluirPerfil" onclick="apagarPerfil()">Excluir Perfil</button>
+    <a class = "bnt2" href = "MinhasSenhas.html">Voltar</a>
+    <a class = "bnt4" href="mailto:evelyn.araujo@escolar.ifrn.edu.br?subject=Solicitação%20De%20Suporte&body=Escreva%20sua%20mensagem%20aqui">Solicitar Suporte</a>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+        let xhttp = new XMLHttpRequest
+        xhttp.onload = function(){
+            document.getElementById('tabelaPerfil').innerHTML=this.response;
+        }
+        xhttp.open('GET','../Controller/Perfil.php');
+        xhttp.send();
+        })
+        function apagarPerfil() {
+            alert("TEM CERTEZA QUE QUER EXCLUIR O SEU PERFIL?");
+            let xhttp = new XMLHttpRequest
+            xhttp.onload = function () {
+                window.location = "index.html";
+                }
+                xhttp.open('GET','../Controller/ApagarPerfil.php');
+                xhttp.send();
+            }
+    </script>
+</body>
+</html>

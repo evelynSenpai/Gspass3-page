@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+</head>
+<body>
+<style>
+    body{
+        background-color: #57449a;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .container{
+        background: #ff0000;
+        height: 800vh;
+    }
+    .elemento{
+        background: #1f252f;
+        color: #ffffff;
+    }
+    main{
+        text-align: center;
+        font-size: 10em;
+    }
+    h2{
+        color: #EEE;
+        text-align: center;
+    }
+    form{
+        color: #1f252f;
+        text-align: center;
+        font-size: 2em;
+    }
+    h1{
+        color: white;
+        text-align: center;
+        font-size: 5em;
+    }
+    h4{
+        color: #EEE;
+        text-align: center;
+        font-size: 2em;
+        top: 55%;
+        left: 50%;
+        transform: translateY(+816%) translateX(0%);
+    }
+    h5{
+        color: #EEE;
+        text-align: center;
+        font-size: 2em;
+        top: 55%;
+        left: 50%;
+        transform: translateY(+694%) translateX(0%);
+    }
+    .bnt2{
+        box-shadow: 2px 2px 2px #000000;
+        text-decoration: none;
+        font-family: 'Times New Roman';
+        color: #EEE;
+        background-color:#1f252f;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 50px;
+        text-align: center;
+        cursor: pointer;
+        transition: background 1s;
+        font-size: 20px;
+        padding: 4px 9px;
+        width: 150px;
+        position: absolute;
+        top: 95%;
+        left: 50.5%;
+        transform: translateY(-20%) translateX(-50%);
+    }
+    .bnt2:hover{
+        background: #000000;
+    }
+    form{
+        background-color:  #1f252f;
+        color: #f5f5f5;
+        text-align: center;
+        font-size: 2em;
+        position: absolute;
+        padding: 40px 70px;
+        border: 1px solid rgb(0, 0, 0);
+        top: 40%;
+        left: 50%;
+        height: 180px;
+        width: 450px;
+        border-radius: 50px;
+        transform: translateY(-40%) translateX(-50%);
+        font-family: 'Times New Roman';
+    }
+    button{
+        box-shadow: 2px 2px 2px #000000;
+        text-decoration: none;
+        font-family: 'Times New Roman';
+        color: #EEE;
+        background-color:#1f252f;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 50px;
+        text-align: center;
+        cursor: pointer;
+        transition: background 1s;
+        font-size: 20px;
+        padding: 10px 1px;
+        width: 190px;
+        position: fixed;
+        top: 95%;
+        left: 50%;
+        transform: translateY(+70%) translateX(-50%);
+    }
+    button:hover{
+        background: #000000;
+    }
+    form{
+        background-color: #1f252f;
+        color: #f5f5f5;
+        text-align: center;
+        font-size: 1.5em;
+        position: absolute;
+        width: 450px;
+        height: 242px;
+        padding: 15px 45px;
+        border: 1px solid rgb(0, 0, 0);
+        top: 55%;
+        left: 22%;
+        border-radius: 50px;
+        transform: translateY(-50%) translateX(+50%);
+    }
+</style>
+<body>
+    <main>
+        <div class = "conteiner">
+            <div class = "elemento">
+                <i>Editar Perfil</i>
+            </div>
+        </div>
+    </main>
+    <h2>Edite Seu Perfil</h2>
+    <form name="editarperfil" id="editarperfil" action="../Controller/EditarDadosPerfil.php" method="POST">
+        <br>
+        <label for="nome">Nome completo: </label>
+        <input type="text" name="nome" id="nome" required />
+        <br>
+        <br>
+        <label for="datadenascimento">Data De Nascimento: </label>
+        <input type="date" name="datadenascimento" id="datadenascimento" required />
+        <br>
+        <br>
+        <label for="telefone">Telefone: </label> 
+        <input type="number" name="telefone" id="telefone" required />
+        <br>
+        <br>
+        <label for="senha">Senha: </label> 
+        <input type="password" name="senha" id="senha" required />
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button type = "submit" name="submit">Salvar Alterações</button>
+    </form>
+    <a class = "bnt2" href = "Perfil.html">Voltar</a>
+    <script>
+        
+    </script>
+</body>
+</html>
+</body>
+</html>
